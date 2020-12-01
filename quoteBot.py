@@ -6,6 +6,8 @@ import json
 
 url = "https://www.adafruit.com/api/quotes.php"
 
+#download telegram app to iOS or android phone
+#to get these fields X
 chat_id = 'XXXXXXXXX'
 TOKEN = 'XXXXXXXXX:XXXXXXXXXXXXXxxxxxx'
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
@@ -33,6 +35,9 @@ def bitQuote():
     print("running")
     message = ' '.join(map(str, get_json_from_url(url)))
     send_message(message, chat_id)
+
+#schedule library allows for several options 
+#change accordingly 
 
 schedule.every().day.at("05:00").do(bitQuote)
     
